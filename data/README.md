@@ -1,0 +1,242 @@
+# Experimental and Simulation Data
+
+This directory contains datasets from simulations, calibrations, and experimental measurements related to the Consciousness-Field Hypothesis.
+
+## Data Organization
+
+### Structure
+```
+/data/
+├── simulations/          # Simulation results and synthetic data
+├── experiments/          # Real experimental measurements  
+├── calibrations/         # Equipment calibration data
+├── analysis/             # Processed analysis results
+└── validation/           # Cross-validation and replication data
+```
+
+### File Formats
+- **HDF5** (`.h5`): Large numerical datasets with metadata
+- **CSV** (`.csv`): Tabular data and summary statistics
+- **NetCDF** (`.nc`): Multi-dimensional time-series data
+- **JSON** (`.json`): Metadata and configuration files
+- **NPY** (`.npy`): NumPy arrays for Python analysis
+
+## Simulation Data
+
+### CFH Predictions
+- `chsh_amplification_sweep.h5`: Parameter sensitivity analysis
+- `eeg_correlation_models.csv`: Neural coherence modeling results
+- `tsirelson_violations.npy`: Predicted violation rates
+- `monte_carlo_validation.h5`: Monte Carlo validation datasets
+
+### Power Analysis
+- `experimental_power_curves.csv`: Statistical power calculations
+- `sample_size_requirements.json`: Required N for different effect sizes
+- `detection_thresholds.npy`: Sensitivity analysis results
+
+## Experimental Data
+
+### EEG-Gated CHSH
+*Data structure for when experiments are conducted*
+```
+chsh_experiment_YYYY-MM-DD/
+├── raw_data/
+│   ├── eeg_channels_64.h5       # Raw EEG recordings
+│   ├── photon_coincidences.csv   # Quantum measurement data
+│   └── timing_data.npy           # Precise timestamps
+├── processed/
+│   ├── plv_values.csv            # Phase-locking values
+│   ├── chsh_parameters.csv       # Calculated S values
+│   └── correlation_analysis.json # Statistical results
+└── metadata/
+    ├── experimental_log.txt      # Session notes
+    ├── equipment_config.json     # Hardware settings
+    └── subject_demographics.csv  # Participant information
+```
+
+### Remote Double-Slit
+```
+double_slit_YYYY-MM-DD/
+├── interference_patterns/        # Fringe visibility data
+├── viewer_states/                # Remote viewer EEG/reports
+├── synchronization/              # Timing coordination
+└── analysis_results/             # Statistical outcomes
+```
+
+### NV-Center Magnetometry
+```
+nv_center_YYYY-MM-DD/
+├── magnetic_field_data.h5        # Continuous field measurements
+├── consciousness_states.csv      # Subject state classifications
+├── environmental_conditions.json # Laboratory conditions
+└── anomaly_detection_results.csv # Significant field variations
+```
+
+## Calibration Data
+
+### EEG System
+- `eeg_impedance_checks.csv`: Daily electrode impedance measurements
+- `noise_floor_characterization.h5`: System noise analysis
+- `channel_cross_talk.npy`: Inter-channel interference measurements
+- `plv_validation_synthetic.csv`: Known signal PLV calculations
+
+### Quantum Optics
+- `detector_efficiency.csv`: Single photon detector characterization
+- `polarizer_extinction_ratios.json`: Optical component specifications
+- `timing_jitter_analysis.h5`: System timing precision measurements
+- `visibility_baseline.csv`: Interferometer stability data
+
+### Cross-Lab Standards
+- `reference_measurements.json`: Standard calibration protocols
+- `transfer_standards.csv`: Inter-laboratory comparisons
+- `equipment_specifications.pdf`: Detailed hardware documentation
+
+## Analysis Results
+
+### Statistical Summaries
+- `hypothesis_test_results.csv`: P-values and effect sizes
+- `confidence_intervals.json`: Parameter estimation bounds
+- `correlation_matrices.npy`: Multi-variate relationship analysis
+- `model_validation_metrics.csv`: Predictive model performance
+
+### Visualization Data
+- `publication_figures.h5`: Data for all publication plots
+- `interactive_dashboard_data.json`: Web interface datasets
+- `animation_sequences.npy`: Time-series visualization data
+
+## Data Management
+
+### Version Control
+- Git LFS for large binary files
+- Semantic versioning for dataset releases
+- Change logs for data modifications
+- Backup procedures and recovery protocols
+
+### Access Control
+- Public datasets: Simulation results and synthetic data
+- Restricted: Human subject data (anonymized after analysis)
+- Collaboration: Shared access for research partners
+- Long-term: Archival in institutional repositories
+
+### Quality Assurance
+```python
+# Example data validation script
+def validate_chsh_data(data_path):
+    """Validate CHSH experimental data integrity"""
+    # Check file completeness
+    required_files = ['eeg_data.h5', 'chsh_measurements.csv', 'metadata.json']
+    
+    # Validate data ranges
+    chsh_data = pd.read_csv(f"{data_path}/chsh_measurements.csv")
+    assert chsh_data['S_parameter'].min() >= 0, "Invalid S parameter range"
+    assert chsh_data['S_parameter'].max() <= 4, "S parameter exceeds theoretical maximum"
+    
+    # Check temporal consistency
+    timestamps = chsh_data['timestamp']
+    assert timestamps.is_monotonic_increasing, "Timestamps not monotonic"
+    
+    # Validate EEG data
+    eeg_data = h5py.File(f"{data_path}/eeg_data.h5", 'r')
+    assert eeg_data['channels'].shape[0] == 64, "Incorrect channel count"
+    
+    return True
+```
+
+### Metadata Standards
+```json
+{
+    "experiment_metadata": {
+        "experiment_type": "eeg_gated_chsh",
+        "date": "2025-06-24",
+        "location": "Laboratory Name",
+        "principal_investigator": "Researcher Name",
+        "equipment": {
+            "eeg_system": "BrainVision actiCHamp 64",
+            "quantum_source": "SPDC BBO crystal",
+            "detectors": "Perkin Elmer SPCM"
+        },
+        "subjects": {
+            "count": 25,
+            "demographics": "demographics.csv",
+            "consent": "IRB-approved"
+        },
+        "data_quality": {
+            "validation_passed": true,
+            "completeness": 0.98,
+            "notes": "2% data loss due to EEG artifacts"
+        }
+    }
+}
+```
+
+## Usage Examples
+
+### Loading Simulation Data
+```python
+import h5py
+import pandas as pd
+import numpy as np
+
+# Load CHSH amplification simulation results
+with h5py.File('data/simulations/chsh_amplification_sweep.h5', 'r') as f:
+    kappa_values = f['parameters/kappa_range'][:]
+    violation_rates = f['results/violation_probability'][:]
+    confidence_intervals = f['results/confidence_intervals'][:]
+
+# Load EEG correlation models
+eeg_models = pd.read_csv('data/simulations/eeg_correlation_models.csv')
+plv_data = eeg_models['phase_locking_value']
+predicted_S = eeg_models['predicted_chsh_parameter']
+```
+
+### Experimental Data Analysis
+```python
+# Load real experimental data (when available)
+def load_experimental_session(session_path):
+    """Load complete experimental session data"""
+    
+    # EEG data
+    eeg_data = h5py.File(f"{session_path}/raw_data/eeg_channels_64.h5", 'r')
+    
+    # Quantum measurements
+    chsh_data = pd.read_csv(f"{session_path}/raw_data/photon_coincidences.csv")
+    
+    # Processed results
+    plv_values = pd.read_csv(f"{session_path}/processed/plv_values.csv")
+    
+    # Metadata
+    with open(f"{session_path}/metadata/experimental_log.json", 'r') as f:
+        metadata = json.load(f)
+    
+    return {
+        'eeg': eeg_data,
+        'chsh': chsh_data,
+        'plv': plv_values,
+        'metadata': metadata
+    }
+```
+
+## Data Sharing Policy
+
+### Open Science Commitment
+- Simulation data: Publicly available immediately
+- Experimental protocols: Shared for replication
+- Raw experimental data: Available after publication (anonymized)
+- Analysis code: Open source in GitHub repositories
+
+### Citation Requirements
+When using this data, please cite:
+```
+Todd, J. (2025). Consciousness-Field Hypothesis: Experimental and Simulation 
+Data Repository. GitHub/Zenodo. DOI: [to be assigned]
+```
+
+### Collaboration Opportunities
+- Contact for access to restricted datasets
+- Collaboration on analysis methods
+- Replication studies using standardized protocols
+- Cross-validation with independent experiments
+
+---
+
+*"Open data accelerates discovery. By sharing our datasets and methods, we invite the global research community to validate, extend, and build upon the Consciousness-Field Hypothesis."*

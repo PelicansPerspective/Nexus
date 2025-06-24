@@ -6,7 +6,7 @@
 ---
 
 ## Abstract
-We formalize a scalar **Ψ‑field** hypothesis in which neural coherence (measured by γ‑band EEG) sources a field that propagates at a finite but superluminal speed `𝓒 ≈ 10²⁰ c`.  The framework predicts measurable amplification of CHSH correlations beyond Tsirelson’s bound.  We present rigorous proofs of micro‑causality, renormalisability, vacuum stability, dimensional consistency, and derive the leading‑order linear amplification law  
+We formalize a scalar **Ψ‑field** hypothesis in which neural coherence (measured by γ‑band EEG) sources a field that propagates at a finite but superluminal speed `𝓒 ≈ 3.3 × 10¹¹ c`.  The framework predicts measurable amplification of CHSH correlations beyond Tsirelson’s bound.  We present rigorous proofs of micro‑causality, renormalisability, vacuum stability, dimensional consistency, and derive the leading‑order linear amplification law  
 \\[
 a \;=\; 1 + \kappa_{\text{eff}}\,\langle\Psi\rangle .
 \\]  
