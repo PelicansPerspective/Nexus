@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software or reference this research, please cite it as below."
+type: software
+title: "Consciousness-Field Hypothesis (CFH): A Quantum Field Theory of Consciousness"
+abstract: "A theoretical framework proposing that consciousness arises from quantum field interactions mediated by a scalar Ψ field, providing mathematical formulations for consciousness-field coupling and testable predictions for experimental validation."
+authors:
+  - family-names: "Nexus Research Team"
+    email: "contact@nexus-cfh.org"
+    affiliation: "Independent Research"
+repository-code: "https://github.com/nexus-team/nexus"
+url: "https://github.com/nexus-team/nexus"
+license: MIT
+keywords:
+  - consciousness
+  - quantum field theory
+  - neuroscience
+  - quantum biology
+  - theoretical physics
+  - interdisciplinary research
+date-released: 2025-06-24
+version: "2.0.0"
+doi: "10.5281/zenodo.XXXXXXX"  # To be updated when DOI is obtained
+preferred-citation:
+  type: article
+  title: "The Consciousness-Field Hypothesis: A Quantum Field Theoretical Approach to Understanding Consciousness"
+  authors:
+    - family-names: "Nexus Research Team"
+      email: "contact@nexus-cfh.org"
+      affiliation: "Independent Research"
+  journal: "In Preparation"
+  year: 2025
+  abstract: "We propose the Consciousness-Field Hypothesis (CFH), a novel theoretical framework that describes consciousness as arising from quantum field interactions mediated by a scalar field (the Ψ field). This framework provides mathematical formulations for consciousness-field coupling through neural microtubule quantum coherence and makes specific, testable predictions for experimental validation."
+  keywords:
+    - consciousness studies
+    - quantum field theory
+    - neural quantum coherence
+    - microtubules
+    - quantum cognition
+  url: "https://github.com/nexus-team/nexus"

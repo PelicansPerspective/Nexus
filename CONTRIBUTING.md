@@ -119,25 +119,103 @@ Following ICMJE guidelines:
 3. Final approval of version to be published
 4. Agreement to be accountable for all aspects of work
 
+## Peer Review & Collaboration
+
+### Inviting Expert Review
+We actively seek peer review from experts in:
+- **Quantum Field Theory**: Mathematical formulation validation
+- **Neuroscience**: Experimental protocol assessment
+- **Statistics**: Analysis method verification
+- **Philosophy of Mind**: Theoretical implications evaluation
+
+#### How to Provide Review
+1. **Theoretical Review**: Comment on mathematical consistency, physical plausibility
+2. **Experimental Review**: Assess protocols, suggest improvements, identify limitations
+3. **Computational Review**: Evaluate simulation accuracy, code quality, performance
+4. **Critical Review**: Identify assumptions, suggest alternatives, highlight weaknesses
+
+#### Review Process
+- Reviews can be formal (structured reports) or informal (GitHub issues/discussions)
+- Anonymous review available upon request
+- Public discussion encouraged for transparency
+- Credit given to all reviewers in publications
+
+### Experimental Proposal Process
+Use the `experiments/experiment_proposal_template.md` to propose new experiments:
+
+1. **Initial Proposal**: Complete the template with detailed specifications
+2. **Community Review**: Open proposal for feedback and suggestions
+3. **Refinement**: Incorporate feedback and address concerns
+4. **Approval**: Review by CFH maintainers and expert panel
+5. **Implementation**: Conduct experiment with progress updates
+6. **Reporting**: Share results regardless of outcome
+
+#### Experimental Support
+- **Protocol Development**: Assistance with experimental design
+- **Equipment Access**: Connections to labs with necessary equipment
+- **Funding Guidance**: Information on relevant grant opportunities
+- **Collaboration**: Multi-lab studies and resource sharing
+
+### Collaboration Guidelines
+
+#### Types of Collaboration
+- **Theoretical**: Joint development of mathematical frameworks
+- **Experimental**: Multi-site validation studies
+- **Computational**: Shared simulation development
+- **Educational**: Course development and teaching materials
+
+#### Collaboration Agreements
+- **Data Sharing**: Protocols for sharing experimental data
+- **Publication**: Authorship and credit arrangements
+- **Intellectual Property**: Clear agreements on IP ownership
+- **Resource Sharing**: Equipment, personnel, and facility access
+
+#### Working Groups
+Join or propose working groups focused on:
+- **Mathematical Foundations**: Theoretical development and consistency
+- **Experimental Validation**: Protocol development and data analysis
+- **Technology Applications**: Practical implementations and devices
+- **Outreach & Education**: Public communication and teaching
+
+## Quality Assurance
+
+### Code Quality Standards
+- **Testing**: All code must include comprehensive tests (see `tests/README.md`)
+- **Documentation**: Clear docstrings and user documentation
+- **Style**: Follow PEP 8 for Python, established conventions for other languages
+- **Performance**: Profile code and optimize critical sections
+
+### Testing Requirements
+- **Unit Tests**: Test individual functions and classes
+- **Integration Tests**: Test complete workflows
+- **Validation Tests**: Compare with known analytical solutions
+- **Regression Tests**: Ensure changes don't break existing functionality
+
+### Code Review Process
+1. **Self-Review**: Test thoroughly before submission
+2. **Automated Checks**: Pass all CI/CD tests
+3. **Peer Review**: At least one reviewer approval required
+4. **Maintainer Review**: Final approval by project maintainers
+
 ## Research Ethics
 
-### Human Subjects
-- IRB approval required for all human studies
-- Informed consent procedures
-- Data privacy and anonymization
-- Psychological safety protocols
+### Responsible Research Practices
+- **Reproducibility**: Provide sufficient detail for replication
+- **Transparency**: Share negative results and limitations
+- **Acknowledgment**: Credit all contributions appropriately
+- **Integrity**: Report findings honestly regardless of implications
 
-### Scientific Integrity
-- Honest reporting of results
-- Proper attribution of ideas
-- Conflict of interest disclosure
-- Responsible data sharing
+### Data Management
+- **Privacy**: Protect participant confidentiality in experimental data
+- **Sharing**: Follow FAIR principles (Findable, Accessible, Interoperable, Reusable)
+- **Retention**: Maintain data according to best practices and regulations
+- **Security**: Implement appropriate data protection measures
 
-### Open Science
-- Preregistration of experiments
-- Open access publication when possible
-- Data and code sharing
-- Transparent methodology
+### Publication Ethics
+- **Authorship**: Include all significant contributors as authors
+- **Attribution**: Cite all relevant prior work appropriately
+- **Conflicts**: Declare any potential conflicts of interest
+- **Preprints**: Share work early while maintaining journal submission rights
 
 ## Funding and Resources
 
